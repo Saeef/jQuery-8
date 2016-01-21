@@ -40,6 +40,7 @@
                     <button class="btn btn-lg btn-primary btn-block btn-signin" >ADD</button>
                 </form>
             </div>
+
             <div class="row">
                 <div class="col-lg-4" >
                     <li class="list-group-item" id="now">NOW</li>
@@ -51,6 +52,7 @@
                      <li class="list-group-item">DONE</li>
                 </div>
             </div>
+
             <ul class="list group">
                
             </ul>
@@ -58,6 +60,7 @@
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script type="text/javascript">
+
         function complete(){
                 console.log(id);
 
@@ -90,6 +93,22 @@ $(".btn").click(function(){
             }
 
             
+
+        $(document).ready(function(){
+            
+            $(".btn").click(function(){
+                if($("#to").val() !== $("#from").val()){
+                $(".list").append("<li class=\"list-group-item\">"+$("#inputList").val()+" "+$("#to").val()+" "+$("#from").val()+"<button onClick=\"\"class=\""+Math.random()+"\"class=\"pull-right \">Completed</button>&nbsp<button onClick=\"doing(Math.random());\"class=\""+Math.random()+"\"class=\"pull-right \">Doing</button></li>");
+            }else{
+                alert("how the heck do you start and finish ?");
+            }
+            function complete(){
+
+            }
+            function doing(id){ 
+               console.log(id);
+            }
+
                  return false;
             });
             //.text($("#new").val())
